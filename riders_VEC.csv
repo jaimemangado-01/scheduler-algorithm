@@ -1,0 +1,14 @@
+rider_id,weekly_hours,max_daily_hours,preferred_rest_days,acepta_madrugada,max_complementary_hours
+4085022,20.0,4,,FALSE,6
+4084843,20.0,4,,FALSE,6
+4088338,30.0,6,Wed-Thu,FALSE,9
+4087532,30.0,6,Mon-Tue,FALSE,9
+4102154,24.0,5,Tue-Wed,FALSE,7
+4107070,30.0,6,Mon-Tue,FALSE,9
+4112755,14.0,3,Wed-Thu,FALSE,4
+4106484,2.0,2,,FALSE,0
+4110923,14.0,3,Mon-Tue,FALSE,4
+4101083,30.0,6,Mon-Tue,FALSE,9
+4092953,38.0,8,Mon-Tue,FALSE,2.0
+4092974,38.0,8,Wed-Thu,FALSE,2.0
+4074662,38.0,8,Mon-Tue,FALSE,2.0
