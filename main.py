@@ -4,7 +4,7 @@ from ortools.sat.python import cp_model
 import os
 import time
 
-from optimizer_core import *
+from optimizer import *
 
 # --- 1. CONFIGURACIÓN DEL PLANIFICADOR ---
 PREVIOUS_WEEK_SCHEDULE_FILE = 'horario_semana_anterior.csv'
