@@ -329,10 +329,9 @@ def apply_daily_shift_structure_rules(model, x, riders, aux_vars):
                 if s > 0 and s < SLOTS_PER_DAY - 2: model.AddBoolOr([x[r_id, d, s - 1], x[r_id, d, s].Not(), x[r_id, d, s + 1].Not(), x[r_id, d, s + 2]])
                 # Prohíbe R-T-T-T-R (turno de 1.5h)
                 if s > 0 and s < SLOTS_PER_DAY - 3: model.AddBoolOr([x[r_id, d, s - 1], x[r_id, d, s].Not(), x[r_id, d, s + 1].Not(), x[r_id, d, s + 2].Not(), x[r_id, d, s + 3]])
-        starts = [model.NewBoolVar(f'start_{r_id}_{d}_{s}') for s in range(SLOTS_PER_DAY)]
-        model.Add(starts[0] == x[r_id, d, 0])
-        for d in range(NUM_DAYS):
+            
             starts = [model.NewBoolVar(f'start_{r_id}_{d}_{s}') for s in range(SLOTS_PER_DAY)]
+            model.Add(starts[0] == x[r_id, d, 0])
             for s in range(1, SLOTS_PER_DAY):
                 model.Add(starts[s] == 1).OnlyEnforceIf(x[r_id, d, s]).OnlyEnforceIf(x[r_id, d, s-1].Not())
                 model.Add(starts[s] == 0).OnlyEnforceIf(x[r_id, d, s].Not())
